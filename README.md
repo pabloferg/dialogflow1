@@ -100,6 +100,8 @@ def get_destination(destination):
  
  You will need `client_id` and `client_secret` from Amadues.
  
+ ![Screenshot](diagram_amadeus.png)
+ 
  ```python
  #### AMADEUS API ####
 def post_request_fares():
