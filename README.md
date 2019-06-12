@@ -16,8 +16,7 @@ The objective of this project is to get user's **queries about flight prices to 
 
 ![Screenshot](example.png)
 
-This will grow to allow multiple interactions with the Agent, so the User can get the info in her **email**, get **similar destinations**, set **alarms** if price increases, **hold** the fare, **share** it with a friend, etc.
-
+The plan is to make this project grow allowing multiple interactions with the Agent, so the User can get the info in her **email**, get **similar destinations**, set **alarms** if price increases, **hold** the fare, **share** it with a friend, **hotel recommendations** etc.
 
 
 First, make sure you understand the basics of Dialogflow: you can start [here](https://dialogflow.com/docs/getting-started).
@@ -47,13 +46,13 @@ The following diagram shows the interactions between the user, agent, fulfillmen
 
 There are two pieces of code in the Fulfillment section in Dialogflow Console:
 - [index_dialogflow.js ](index_dialogflow.js)
-- [package.json](package.json) : here we will only add `"axios": "0.18.0"` to use axios package
+- [package.json](package.json) : here we just add `"axios": "0.18.0"` to use axios package
 
-Make sure you enable webhook calls for your intent.
+Make sure you enable webhook calls for your Intent.
 
 You can find the full code in [index_dialogflow.js](index_dialogflow.js).
 
-Let's break down the code. We can reuse most of the code given by Dialogflow. In the first section, we will just add the `const axios =...` to use the package:
+Let's break down the code. We can reuse most of the code given by Dialogflow (thanks!). In the first section, we will just add the `const axios =...` to use the package:
 
 
 ```javascript
@@ -110,7 +109,7 @@ function GetRandomSpeech(destination, fare, airline) {
 
 Then we create the main function for our Intent.
 
-It will be called when the Intent `GetFlightInfo` is detected (i.e. user asks *'how much is a flight to Paris?'*)
+It will be called when the Intent `GetFlightInfo` is detected by the Agent (i.e. user asks *'how much is a flight to Paris?'*)
 
 ```javascript  
  function GetFlightInfoHandler(agent) {
@@ -153,11 +152,11 @@ In the last part, we just add the `intentMap.set` for our Intent `GetFlightInfo`
 
  ## Deployment in Heroku
 
-We deploy the app (python file) on Heroku. Find here the full folder: [first-flask-app](first-flask-app)
+We deploy the App - python file - on Heroku (check Youtube videos).
 
-https://medium.com/@naz_islam/how-to-authenticate-google-cloud-services-on-heroku-for-node-js-app-dda9f4eda798
+Find here the folder with the files: [first-flask-app](first-flask-app)
 
-Once the app is deployed successfully, we need to set up GOOGLE_APPLICATION_CREDENTIALS environment variable and point it to the path of the service account key. In our case it is ‘config/<your_key_file>.json’.
+Once the App is deployed successfully, we need to set up GOOGLE_APPLICATION_CREDENTIALS environment variable and point it to the path of the service account key. In our case it is ‘config/<your_key_file>.json’.
 
 ```
 $ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/<your_key_file>.json’
@@ -248,7 +247,9 @@ def get_destination(destination):
  
 The python script will request fares to the Amadeus API for the `destination` picked by the Dialogflow agent. First, we will convert the Name of the destination to its Airport Code equivalent using `cityName_to_airport` function. 
 
-The Amadeus API has a common POST/GET interaction, you can read more about it [here](https://developers.amadeus.com/self-service/category/air/api-doc/flight-low-fare-search/api-reference). First, using a `POST` request we get an `access_token`. Then, with a `GET` request we ask for the json file containing flights and fares. For this example, we hard-coded the GET query with origin in Heathrow Airport (LHR), one-way non-stop departure in 2019-07-01 for one adult with British Airways (BA).
+The Amadeus API has a traditional POST/GET interaction, you can read more about it [here](https://developers.amadeus.com/self-service/category/air/api-doc/flight-low-fare-search/api-reference).
+
+First, using a `POST` request we get the `access_token`. Then, with a `GET` request we ask for the json file containing flights and fares. For this example, we hard-coded the GET query with origin in Heathrow Airport (LHR), one-way non-stop departure in 2019-07-01 for one adult with British Airways (BA), retreiving maximum 1 option for simplicity.
 
 ```json
 {"origin":"LHR",
@@ -263,6 +264,7 @@ The Amadeus API has a common POST/GET interaction, you can read more about it [h
  
 Here you can see an example of [Amadeus API response](#amadeus-response-example)
   
+ High level picture of the calls between Dialogflow, Heroku and Amadeus.
  
  ![Screenshot](diagram_amadeus_dialogflow.png)
  
