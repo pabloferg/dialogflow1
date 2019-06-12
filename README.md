@@ -24,6 +24,12 @@ Heroku. For example, the url https://digital-flights.herokuapp.com/destination/h
 {"airline":"BroomAir","airportCode":"HDW","airportName":"Hedwig Airport","fare":"300"}
 ```
 
+the url https://digital-flights.herokuapp.com/destination/vancouver response is:
+
+```json
+{"airline":"BA","airportCode":"YVR","airportName":"Vancouver","fare":"1963.63"}
+```
+
 The following diagram shows the interactions between the user, agent, fulfillment and Amadeus API.
 
 ![Screenshot](diagram.png)
