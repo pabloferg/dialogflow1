@@ -2,7 +2,7 @@
 First Dialogflow Project
 
 
-![Alt text](dialogflow1/diagram.png)
+![Screenshot](diagram.png)
 
 How to 
 
