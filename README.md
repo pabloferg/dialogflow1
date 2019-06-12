@@ -3,37 +3,38 @@ Call Amadeus Low Fares API using Dialogflow
 
 ## Content
 
-- [Purpose](#purpose)
+- [Overview](#overview)
 - [Dialogflow Fulfillment code](#dialogflow-fulfillment-code)
+
+## Overview
 
 This example gets an intent from a user asking for a fare for a parcicular destination, then the agent will reply back with a fare.
 
-First we need to create an agent on Dialogflow - just follow these steps.
+First, make sure you understand the basics of Dialogflow: you can start [here](https://dialogflow.com/docs/getting-started).
 
-Make sure you understand the basics of tensorflow: you can start [here](https://dialogflow.com/docs/getting-started).
-
-For this example we just create and Agent (`my-mind`) and an Intent (GetFlightInfo).
+For this example we just create Agent (`my-mind`) and Intent (`GetFlightInfo`).
 
 ![Screenshot](dialogflow_screenshot.png)
 
 
 ![Screenshot](diagram.png)
 
-How to 
+
 
 https://medium.com/@naz_islam/how-to-authenticate-google-cloud-services-on-heroku-for-node-js-app-dda9f4eda798
 
 Once the app is deployed successfully, we need to set up GOOGLE_APPLICATION_CREDENTIALS environment variable and point it to the path of the service account key. In our case it is ‘config/keyFile.json’.
 
 ```
-$ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/keyFile.json’
+$ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/<your_key_file>.json’
 ```
 
-## Purpose
-aaa
+
 
 
 ## Dialogflow Fulfillment code
+
+The following code is given by Dialogflow -we can keep it:
 
 ```javascript
 // See https://github.com/dialogflow/dialogflow-fulfillment-nodejs
@@ -62,9 +63,10 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     agent.add(`I didn't understand`);
     agent.add(`I'm sorry, can you try again?`);
   }
+```
 
-
-  
+In order to make our Agent more friendly, we create two functions thant randomly get different sentences to reply.
+```javascript  
 function GetRandomIntro() {
   const intros = [
     'Sure, let me check', 
@@ -83,11 +85,11 @@ function GetRandomSpeech(destination, fare, airline) {
     ];
    agent.add(speeches[Math.floor(Math.random() * speeches.length)]);
 }  
-  
-  
-  
+```
 
-  
+We create the following function. It will be called when the Intent GetFlightInfo is detected (i.e. user asks *'how much is a flight to Paris?'*)
+
+```javascript  
  function GetFlightInfoHandler(agent) {
    const destination = agent.parameters['geo-city']; 
    
@@ -112,11 +114,6 @@ function callApi(url) {
 }
   
 
-  
-
-               
-  
-  
   
   // Run the proper function handler based on the matched Dialogflow intent name
   let intentMap = new Map();
