@@ -2,7 +2,7 @@
 First Dialogflow Project
 
 
-![Alt text](pabloferg/dialogflow1/diagram.png?raw=true "Title")
+![Alt text](dialogflow1/diagram.png)
 
 How to 
 
