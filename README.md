@@ -12,7 +12,7 @@ Call Amadeus Low Fares API using Dialogflow
 
 ## Overview
 
-The objective of this project is to get user's **queries about flight prices to destinations** using Dialogflow, to **get the lowest fare** from Amadeus, and **reply back** to the user.
+The objective of this project is to get user's **queries about flight prices to destinations** using Dialogflow, to **get the lowest fare** from Amadeus, and **reply back** to the user. At the moment, it only works for routes from Heathrow Airport, one-way, direct, one adult with depaerture in July 2019.
 
 First, make sure you understand the basics of Dialogflow: you can start [here](https://dialogflow.com/docs/getting-started).
 
@@ -30,7 +30,7 @@ or https://digital-flights.herokuapp.com/destination/vancouver response is:
 {"airline":"BA","airportCode":"YVR","airportName":"Vancouver","fare":"1963.63"}
 ```
 
-The lookup table to translate City Names into Airport Codes is sotored in BigQuery. Learn more [here](https://cloud.google.com/bigquery/docs/tutorials).
+The lookup table to translate City Names into Airport Codes is stored in BigQuery. Learn more [here](https://cloud.google.com/bigquery/docs/tutorials).
 
 The following diagram shows the interactions between the user, agent, fulfillment and Amadeus API.
 
