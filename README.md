@@ -16,7 +16,7 @@ The objective of this project is to get user's **queries about flight prices to 
 
 ![Screenshot](example.png)
 
-This will grow to allow multiple interactions with the Agent, so the User can get the info in her **email**, get **similar destinations**, set **alarms** if prices increases, **hold** the fare, **share** it with a friend, etc.
+This will grow to allow multiple interactions with the Agent, so the User can get the info in her **email**, get **similar destinations**, set **alarms** if price increases, **hold** the fare, **share** it with a friend, etc.
 
 
 
