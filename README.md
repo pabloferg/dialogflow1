@@ -5,6 +5,10 @@ Call Amadeus Low Fares API using Dialogflow
 
 - [Overview](#overview)
 - [Dialogflow Fulfillment code](#dialogflow-fulfillment-code)
+- [Deployment in Heroku](#deployment-in-heroku)
+- [Python Flask Application](#python-flask-application)
+- [Call Amadeus Low Fare API](#call-amadeus-low-fare-api)
+
 
 ## Overview
 
@@ -127,7 +131,7 @@ In the last part, we just add the `intentMap.set` for our Intent `GetFlightInfo`
 });
 ```
 
- ## Deploy in Heroku
+ ## Deployment in Heroku
 
 We deploy the app (python file) on Heroku. Find here the full folder: [first-flask-app](first-flask-app)
 
@@ -139,7 +143,7 @@ Once the app is deployed successfully, we need to set up GOOGLE_APPLICATION_CRED
 $ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/<your_key_file>.json’
 ```
 
-## Python-Flask Application
+## Python Flask Application
 
 You can find the full code here: [/first-flask-app/flask_basic.py](/first-flask-app/flask_basic.py)
 
