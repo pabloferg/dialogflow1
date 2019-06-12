@@ -249,7 +249,7 @@ The python script will request fares to the Amadeus API for the `destination` pi
 
 The Amadeus API has a traditional POST/GET interaction, you can read more about it [here](https://developers.amadeus.com/self-service/category/air/api-doc/flight-low-fare-search/api-reference).
 
-First, using a `POST` request we get the `access_token`. Then, with a `GET` request we ask for the json file containing flights and fares. For this example, we hard-coded the GET query with origin in Heathrow Airport (LHR), one-way non-stop departure in 2019-07-01 for one adult with British Airways (BA), retreiving maximum 1 option for simplicity.
+First, using a `POST` request we get the `access_token`. Then, with a `GET` request we ask for the json file containing flights and fares. For this example, we hard-coded the GET query with origin in Heathrow Airport (LHR), one-way departure in 2019-07-01 for one adult with British Airways (BA), retreiving maximum 1 option for simplicity.
 
 ```json
 {"origin":"LHR",
