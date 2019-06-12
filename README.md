@@ -102,6 +102,7 @@ def get_destination(destination):
  
  ![Screenshot](diagram_amadeus.png)
  
+ 
  ```python
  #### AMADEUS API ####
 def post_request_fares():
