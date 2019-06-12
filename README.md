@@ -12,22 +12,12 @@ This example gets an intent from a user asking for a fare for a parcicular desti
 
 First, make sure you understand the basics of Dialogflow: you can start [here](https://dialogflow.com/docs/getting-started).
 
-For this example we just create Agent (`my-mind`) and Intent (`GetFlightInfo`).
+For this example we just create one Agent and one Intent (`GetFlightInfo`).
 
-![Screenshot](dialogflow_screenshot.png)
-
+The following diagram shows the interactions between the user, agent, fulfillment and Amadeus API.
 
 ![Screenshot](diagram.png)
 
-
-
-https://medium.com/@naz_islam/how-to-authenticate-google-cloud-services-on-heroku-for-node-js-app-dda9f4eda798
-
-Once the app is deployed successfully, we need to set up GOOGLE_APPLICATION_CREDENTIALS environment variable and point it to the path of the service account key. In our case it is ‘config/keyFile.json’.
-
-```
-$ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/<your_key_file>.json’
-```
 
 
 
@@ -211,6 +201,20 @@ def get_destination(destination):
 
     return json_output
  ```
+ 
+ ## Deploy in Heroku
+
+We deploy the app (python file) on Heroku. Find here the full folder: 
+
+https://medium.com/@naz_islam/how-to-authenticate-google-cloud-services-on-heroku-for-node-js-app-dda9f4eda798
+
+Once the app is deployed successfully, we need to set up GOOGLE_APPLICATION_CREDENTIALS environment variable and point it to the path of the service account key. In our case it is ‘config/keyFile.json’.
+
+```
+$ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/<your_key_file>.json’
+```
+
+
  
  ## Call Amadeus Low Fare API
  
