@@ -4,7 +4,7 @@ Call Amadeus Low Fares API using Dialogflow
 ## Content
 
 - [Purpose](#purpose)
-- [Dialogflow Fulfillment code](#Dialogflow-Fulfillment-code)
+- [Dialogflow Fulfillment code](#dialogflow-fulfillment-code)
 
 This example gets an intent from a user asking for a fare for a parcicular destination, then the agent will reply back with a fare.
 
@@ -33,7 +33,7 @@ $ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/keyFile.json’
 aaa
 
 
-## Digaloflow Fulfillment code
+## Dialogflow Fulfillment code
 
 ```javascript
 // See https://github.com/dialogflow/dialogflow-fulfillment-nodejs
