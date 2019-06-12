@@ -32,11 +32,19 @@ import time
 from google.cloud import bigquery
 ```
 
+The table is stored in BigQuery. Check the [Quickstart Guide](https://cloud.google.com/bigquery/docs/quickstarts/quickstart-client-libraries#client-libraries-install-python) to learn how to access using Python. 
 
 ```python
 # Initialize a BigQuery Client
 client = bigquery.Client()
+```
 
+We create a simple Flask application with just:
+- (1) a main route ("/") with response "Hello World",
+- (2) /destination/ 
+
+
+```python
 # Flask application
 application = Flask(__name__)
 
@@ -87,3 +95,46 @@ def get_destination(destination):
 
     return json_output
  ```
+ 
+ Amadeus [Flight Low Fare API](https://developers.amadeus.com/self-service/category/air/api-doc/flight-low-fare-search/api-reference)
+ 
+ ```python
+ #### AMADEUS API ####
+def post_request_fares():
+    url = "https://test.api.amadeus.com/v1/security/oauth2/token"
+    payload = "grant_type=client_credentials&client_id=gHea0Lv9FKuZmoDAsKblP4KmU3YcLGu6&client_secret=M6cweU8QmCb7XhNR&undefined="
+    headers = {
+        'Content-Type': "application/x-www-form-urlencoded",
+        'cache-control': "no-cache",
+        'Postman-Token': "52a00ceb-c42c-46bc-a9b7-3afb5f693441"
+        }
+
+    response = requests.request("POST", url, data=payload, headers=headers)
+
+    return response.json()['access_token']
+
+def get_request_fares(access_token, airport_code):
+
+    url = "https://test.api.amadeus.com/v1/shopping/flight-offers"
+
+    querystring = {"origin":"LHR",
+                   "destination": airport_code,
+                   "departureDate":"2019-07-01",
+                   "adults":"1",
+                   "includeAirlines":"BA",
+                   "nonStop":"false",
+                   "max":"1"}
+
+    payload = ""
+    headers = {
+        'Authorization': "Bearer " + access_token,
+        'cache-control': "no-cache",
+        }
+
+    response = requests.request("GET", url, data=payload, headers=headers, params=querystring)
+
+    return response.json()
+ 
+ 
+ 
+```
