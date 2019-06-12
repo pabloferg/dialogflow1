@@ -12,18 +12,18 @@ Call Amadeus Low Fares API using Dialogflow
 
 ## Overview
 
-The objective of this project is to get user's **queries about flight prices to destinations** using Dialogflow, to **get the lowest fare** from Amadeus, and **reply back** to the user. At the moment, it only works for routes from Heathrow Airport, one-way, direct, one adult with departure in July 2019 operated by British Airways.
+The objective of this project is to get User's **queries about flight fares to destinations** using Dialogflow, to **get the lowest fare** from Amadeus, and **reply back** to the user. At the moment, it only works for routes from Heathrow Airport, one-way, direct, one adult with departure in July 2019 operated by British Airways.
 
 ![Screenshot](example.png)
 
-The plan is to make this project grow allowing multiple interactions with the Agent, so the User can get the info in her **email**, get **similar destinations**, set **alarms** if price increases, **hold** the fare, **share** it with a friend, **hotel recommendations** etc.
+The plan is to make this project grow allowing multiple interactions with the Agent, so the Users can get the info on their **emails**, get **similar destinations**, set **alarms** if fare increases, **hold** the fare, **share** it with a friend, **hotel** recommendations, etc.
 
 
 First, make sure you understand the basics of Dialogflow: you can start [here](https://dialogflow.com/docs/getting-started).
 
 For this example we just create one Agent and one Intent (`GetFlightInfo`).
 
-We create a Flask App with python and deploy it in Heroku. Dialogflow Fulfillment will use it as API to get the fares and extra info. For example, the url https://digital-flights.herokuapp.com/destination/hogwarts response is:
+We create a Flask App with python and deploy it to Heroku. Dialogflow Fulfillment will use it as API to get the fares and extra info. For example, the url https://digital-flights.herokuapp.com/destination/hogwarts response is:
 
 ```json
 {"airline":"BroomAir","airportCode":"HDW","airportName":"Hedwig Airport","fare":"300"}
@@ -150,9 +150,9 @@ In the last part, we just add the `intentMap.set` for our Intent `GetFlightInfo`
 });
 ```
 
- ## Deployment in Heroku
+ ## Deployment to Heroku
 
-We deploy the App - python file - on Heroku (check Youtube videos).
+We deploy the App - python file - to Heroku (check Youtube videos).
 
 Find here the folder with the files: [first-flask-app](first-flask-app)
 
