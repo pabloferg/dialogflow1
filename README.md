@@ -1,4 +1,7 @@
-# dialogflow1
+Call Amadeus Low Fares API using Dialogflow
+=============================
+
+## Version 0.1 - Published 2019 Jun 12
 
 This example gets an intent from a user asking for a fare for a parcicular destination, then the agent will reply back with a fare.
 
@@ -161,8 +164,7 @@ def get_request_fares(access_token, airport_code):
  
 ```
 
-Extract fare from json file:
-
+### extract_fare_from_json
 ```python
 def extract_fare_from_json(json):
     fare = json['data'][0]['offerItems'][0]['pricePerAdult']['total']
@@ -203,10 +205,6 @@ def cityName_to_airport(cityName):
 
     return airportCode, airportName
 ```
-
-
-
-
 
 ## Amadeus Response example
 ```json
