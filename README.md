@@ -7,7 +7,8 @@ This example gets an intent from a user asking for a fare for a parcicular desti
 
 First we need to create an agent on Dialogflow - just follow these steps.
 
-Once we have the 
+Make sure you create an Intent with some Training phrases. In this example, we create intent `GetFlightInfo`.
+![Screenshot](dialogflow_screenshot.png)
 
 
 ![Screenshot](diagram.png)
