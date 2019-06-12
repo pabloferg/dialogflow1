@@ -123,7 +123,7 @@ In the last part, we just add the `intentMap.set` for our Intent `GetFlightInfo`
 });
 ```
 
-# Python-Flask Application
+## Python-Flask Application
 
 First we import the main libraries:
 
@@ -230,16 +230,15 @@ The Amadeus API has a common POST/GET interaction, you can read more about it [h
 ```
  
  
- [Amadeus example](#-amadeus-response-example)
- 
- You will need `client_id` and `client_secret` from Amadues.
- 
+ [Amadeus example](#amadeus-response-example)
+  
  
  ![Screenshot](diagram_amadeus_dialogflow.png)
  
  ```python
  #### AMADEUS API ####
 def post_request_fares():
+    # You need client_id and client_secret from Amadeus
     url = "https://test.api.amadeus.com/v1/security/oauth2/token"
     payload = "grant_type=client_credentials&client_id=XXXXX&client_secret=XXXXX&undefined="
     headers = {
