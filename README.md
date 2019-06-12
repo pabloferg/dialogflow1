@@ -19,14 +19,17 @@ The following diagram shows the interactions between the user, agent, fulfillmen
 ![Screenshot](diagram.png)
 
 
-
-
-
 ## Dialogflow Fulfillment code
+
+There are two files:
+- [index_dialogflow.js ](index_dialogflow.js)
+- package.json : here we will only add `"axios": "0.18.0"` to use axios package
+
+This code goes in the Fulfillment section of the Dialogflow Console. Make sure you enable webhook calls for your intent.
 
 You can find the full code in [index_dialogflow.js](index_dialogflow.js).
 
-The following code is given by Dialogflow - we will just add the `const axios =...` to use the package:
+Let's break down the code. We can reuse most of the code given by Dialogflow. In the first section, we will just add the `const axios =...` to use the package:
 
 
 ```javascript
@@ -58,7 +61,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   }
 ```
 
-In order to make our Agent more friendly, we create two functions thant randomly get different sentences to reply.
+Now - to humanize our Agent- we add two functions that randomly get different sentences to reply.
 
 ```javascript  
 function GetRandomIntro() {
@@ -81,8 +84,9 @@ function GetRandomSpeech(destination, fare, airline) {
 }  
 ```
 
-We create the following function.
-It will be called when the Intent GetFlightInfo is detected (i.e. user asks *'how much is a flight to Paris?'*)
+Then we create the main function for our Intent.
+
+It will be called when the Intent `GetFlightInfo` is detected (i.e. user asks *'how much is a flight to Paris?'*)
 
 ```javascript  
  function GetFlightInfoHandler(agent) {
@@ -102,7 +106,7 @@ It will be called when the Intent GetFlightInfo is detected (i.e. user asks *'ho
  }
 ```
 
-We create this function as well outside the main Intent Handler. It will get the url.
+We create the function that calls the Heroku API outside the main function. 
 
 ```javascript
 function callApi(url) {
@@ -125,7 +129,7 @@ In the last part, we just add the `intentMap.set` for our Intent `GetFlightInfo`
 
 ## Python-Flask Application
 
-You can find the fill code here: [/first-flask-app/flask_basic.py](/first-flask-app/flask_basic.py)
+You can find the full code here: [/first-flask-app/flask_basic.py](/first-flask-app/flask_basic.py)
 
 First we import the main libraries:
 
@@ -144,9 +148,9 @@ The table is stored in BigQuery. Check the [Quickstart Guide](https://cloud.goog
 client = bigquery.Client()
 ```
 
-We create a simple Flask application with just:
-- (1) a main route ("/") with response "Hello World",
-- (2) /destination/ 
+We create a simple Flask application with just two routes:
+- / with response "Hello World",
+- /destination/ 
 
 
 ```python
