@@ -104,7 +104,7 @@ The Amadeus API has a common POST/GET interaction, you can read more about it [h
 
 ```json
 {"origin":"LHR",
- "destination": airport_code,
+ "destination": "airport_code",
  "departureDate":"2019-07-01",
  "adults":"1",
  "includeAirlines":"BA",
@@ -112,6 +112,8 @@ The Amadeus API has a common POST/GET interaction, you can read more about it [h
  "max":"1"}
 ```
  
+ 
+ [Amadeus example ](### Amadeus Response example: ###)
  You will need `client_id` and `client_secret` from Amadues.
  
  
@@ -205,7 +207,7 @@ def cityName_to_airport(cityName):
 
 
 
-Amadeus Response example:
+### Amadeus Response example: ###
 ```json
 {
   "data": [
