@@ -96,7 +96,21 @@ def get_destination(destination):
     return json_output
  ```
  
- Amadeus [Flight Low Fare API](https://developers.amadeus.com/self-service/category/air/api-doc/flight-low-fare-search/api-reference)
+ ## Call Amadeus Low Fare API ##
+ 
+The python script will request fares to the Amadeus API for the `destination` picked by the Dialogflow agent. First, we will convert the Name of the destination to its Airport Code equivalent using `cityName_to_airport` function. 
+
+The Amadeus API has a common POST/GET interaction, you can read more about it [here](https://developers.amadeus.com/self-service/category/air/api-doc/flight-low-fare-search/api-reference). First, using a `POST` request we get an `access_token`. Then, with a `GET` request we ask for the json file containing flights and fares. For this example, we hard-coded the GET query with origin in Heathrow Airport (`LHR`), one-way non-stop departure in `2019-07-01` for one adult with British Airways (`BA`).
+
+```json
+{"origin":"LHR",
+ "destination": airport_code,
+ "departureDate":"2019-07-01",
+ "adults":"1",
+ "includeAirlines":"BA",
+ "nonStop":"false",
+ "max":"1"}
+```
  
  You will need `client_id` and `client_secret` from Amadues.
  
