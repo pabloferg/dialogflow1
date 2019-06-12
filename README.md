@@ -12,11 +12,17 @@ Call Amadeus Low Fares API using Dialogflow
 
 ## Overview
 
-The objective of this project is to get user's **queries about flight prices to destinations** using Dialogflow, to **get the lowest fare** from Amadeus, and **reply** to the user.
+The objective of this project is to get user's **queries about flight prices to destinations** using Dialogflow, to **get the lowest fare** from Amadeus, and **reply back** to the user.
 
 First, make sure you understand the basics of Dialogflow: you can start [here](https://dialogflow.com/docs/getting-started).
 
 For this example we just create one Agent and one Intent (`GetFlightInfo`).
+
+Heroku. For example, the url https://digital-flights.herokuapp.com/destination/hogwarts response is:
+
+```json
+{"airline":"BroomAir","airportCode":"HDW","airportName":"Hedwig Airport","fare":"300"}
+```
 
 The following diagram shows the interactions between the user, agent, fulfillment and Amadeus API.
 
