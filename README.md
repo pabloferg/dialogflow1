@@ -12,7 +12,7 @@ Call Amadeus Low Fares API using Dialogflow
 
 ## Overview
 
-This example gets an intent from a user asking for a fare for a parcicular destination, then the agent will reply back with a fare.
+The objective of this project is to get user's **queries about flight prices to destinations** using Dialogflow, to **get the lowest fare** from Amadeus, and **reply** to the user.
 
 First, make sure you understand the basics of Dialogflow: you can start [here](https://dialogflow.com/docs/getting-started).
 
