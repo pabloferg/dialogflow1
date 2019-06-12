@@ -12,7 +12,7 @@ Call Amadeus Low Fares API using Dialogflow
 
 ## Overview
 
-The objective of this project is to get User's **queries about flight fares to destinations** using Dialogflow, to **get the lowest fare** from Amadeus, and **reply back** to the user. At the moment, it only works for routes from Heathrow Airport, one-way, direct, one adult with departure in July 2019 operated by British Airways.
+The objective of this project is to get User's **queries about flight fares to destinations** using Dialogflow, to **get the lowest fare** from Amadeus, and **reply back** to the user. At the moment, it only works for routes from Heathrow Airport, one-way, direct, one adult with departure in July 2019 operated by British Airways. I hope you like it.
 
 ![Screenshot](example.png)
 
