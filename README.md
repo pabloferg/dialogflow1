@@ -18,17 +18,19 @@ First, make sure you understand the basics of Dialogflow: you can start [here](h
 
 For this example we just create one Agent and one Intent (`GetFlightInfo`).
 
-Heroku. For example, the url https://digital-flights.herokuapp.com/destination/hogwarts response is:
+We create a Flask App with python and deploy it in Heroku. Dialogflow Fulfillment will use it as API to get the fares and extra info. For example, the url https://digital-flights.herokuapp.com/destination/hogwarts response is:
 
 ```json
 {"airline":"BroomAir","airportCode":"HDW","airportName":"Hedwig Airport","fare":"300"}
 ```
 
-the url https://digital-flights.herokuapp.com/destination/vancouver response is:
+or https://digital-flights.herokuapp.com/destination/vancouver response is:
 
 ```json
 {"airline":"BA","airportCode":"YVR","airportName":"Vancouver","fare":"1963.63"}
 ```
+
+The lookup table to translate City Names into Airport Codes is sotored in BigQuery. Learn more [here](https://cloud.google.com/bigquery/docs/tutorials).
 
 The following diagram shows the interactions between the user, agent, fulfillment and Amadeus API.
 
