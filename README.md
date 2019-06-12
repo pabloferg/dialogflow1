@@ -98,11 +98,13 @@ def get_destination(destination):
  
  Amadeus [Flight Low Fare API](https://developers.amadeus.com/self-service/category/air/api-doc/flight-low-fare-search/api-reference)
  
+ You will need `client_id` and `client_secret` from Amadues.
+ 
  ```python
  #### AMADEUS API ####
 def post_request_fares():
     url = "https://test.api.amadeus.com/v1/security/oauth2/token"
-    payload = "grant_type=client_credentials&client_id=gHea0Lv9FKuZmoDAsKblP4KmU3YcLGu6&client_secret=M6cweU8QmCb7XhNR&undefined="
+    payload = "grant_type=client_credentials&client_id=XXXXX&client_secret=XXXXX&undefined="
     headers = {
         'Content-Type': "application/x-www-form-urlencoded",
         'cache-control': "no-cache",
