@@ -253,7 +253,7 @@ First, using a `POST` request we get the `access_token`. Then, with a `GET` requ
 
 ```json
 {"origin":"LHR",
- "destination": "airport_code",
+ "destination": airport_code,
  "departureDate":"2019-07-01",
  "adults":"1",
  "includeAirlines":"BA",
@@ -264,7 +264,7 @@ First, using a `POST` request we get the `access_token`. Then, with a `GET` requ
  
 Here you can see an example of [Amadeus API response](#amadeus-response-example)
   
- High level picture of the calls between Dialogflow, Heroku and Amadeus.
+The following diagram shows the high level picture of the calls between Dialogflow, Heroku and Amadeus.
  
  ![Screenshot](diagram_amadeus_dialogflow.png)
  
@@ -307,9 +307,6 @@ def get_request_fares(access_token, airport_code):
     response = requests.request("GET", url, data=payload, headers=headers, params=querystring)
 
     return response.json()
- 
- 
- 
 ```
 
 ### extract_fare_from_json
@@ -320,7 +317,6 @@ def extract_fare_from_json(json):
 
     return fare, airline
 ```
-
 
 ### cityName_to_airport
 ```python
