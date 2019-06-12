@@ -207,7 +207,7 @@ def cityName_to_airport(cityName):
 
 
 
-### Amadeus Response example: ###
+### Amadeus Response example:
 ```json
 {
   "data": [
