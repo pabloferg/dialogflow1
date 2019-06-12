@@ -278,8 +278,7 @@ def post_request_fares():
     payload = "grant_type=client_credentials&client_id=XXXXX&client_secret=XXXXX&undefined="
     headers = {
         'Content-Type': "application/x-www-form-urlencoded",
-        'cache-control': "no-cache",
-        'Postman-Token': "52a00ceb-c42c-46bc-a9b7-3afb5f693441"
+        'cache-control': "no-cache"
         }
 
     response = requests.request("POST", url, data=payload, headers=headers)
