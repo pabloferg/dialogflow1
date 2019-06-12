@@ -34,7 +34,9 @@ $ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/<your_key_file>.jso
 
 ## Dialogflow Fulfillment code
 
-The following code is given by Dialogflow - we will just add the following line to use `axios` package:
+You can find the full code here. 
+
+The following code is given by Dialogflow - we will just add the 'const axios =...' to use the package:
 
 ```javascript
 const axios = require('axios');
@@ -70,6 +72,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 ```
 
 In order to make our Agent more friendly, we create two functions thant randomly get different sentences to reply.
+
 ```javascript  
 function GetRandomIntro() {
   const intros = [
@@ -91,7 +94,8 @@ function GetRandomSpeech(destination, fare, airline) {
 }  
 ```
 
-We create the following function. It will be called when the Intent GetFlightInfo is detected (i.e. user asks *'how much is a flight to Paris?'*)
+We create the following function.
+It will be called when the Intent GetFlightInfo is detected (i.e. user asks *'how much is a flight to Paris?'*)
 
 ```javascript  
  function GetFlightInfoHandler(agent) {
@@ -104,26 +108,29 @@ We create the following function. It will be called when the Intent GetFlightInf
     let airline = response.data.airline;
      
     GetRandomSpeech(destination, fare.split(".")[0] , airline);
-    //agent.add(destination)
-    //agent.add(fare.split(".")[0]);
-     
-
+    
   }).catch (error => {
     // do something
   });																								
  }
-  
+```
+
+We create this function as well outside the main Intent Handler. It will get the url.
+
+```javascript
 function callApi(url) {
   return axios.get(url);
 }
-  
+```  
 
-  
+In the last part, we just add the `intentMap.set` for our Intent `GetFlightInfo`.
+
+ ``` javascript
   // Run the proper function handler based on the matched Dialogflow intent name
   let intentMap = new Map();
   intentMap.set('Default Welcome Intent', welcome);
   intentMap.set('Default Fallback Intent', fallback);
-  intentMap.set('GetFlightInfo', GetFlightInfoHandler);
+  intentMap.set('GetFlightInfo', GetFlightInfoHandler);  <============= add
   // intentMap.set('your intent name here', googleAssistantHandler);
   agent.handleRequest(intentMap);
 });
