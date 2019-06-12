@@ -16,6 +16,10 @@ The objective of this project is to get user's **queries about flight prices to 
 
 ![Screenshot](example.png)
 
+This will grow to allow multiple interactions with the Agent, so the User can get the info in the **email**, get **similar destinations**, set **alarms** if prices increases, **hold** the fare, **share** it with a friend, etc.
+
+
+
 First, make sure you understand the basics of Dialogflow: you can start [here](https://dialogflow.com/docs/getting-started).
 
 For this example we just create one Agent and one Intent (`GetFlightInfo`).
