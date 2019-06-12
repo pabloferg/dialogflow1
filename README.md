@@ -14,6 +14,8 @@ Call Amadeus Low Fares API using Dialogflow
 
 The objective of this project is to get user's **queries about flight prices to destinations** using Dialogflow, to **get the lowest fare** from Amadeus, and **reply back** to the user. At the moment, it only works for routes from Heathrow Airport, one-way, direct, one adult with departure in July 2019.
 
+![Screenshot](example.png)
+
 First, make sure you understand the basics of Dialogflow: you can start [here](https://dialogflow.com/docs/getting-started).
 
 For this example we just create one Agent and one Intent (`GetFlightInfo`).
