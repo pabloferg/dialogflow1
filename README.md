@@ -20,7 +20,7 @@ $ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/keyFile.json’
 ```
 
 
-# Python-Flask Application #
+# Python-Flask Application
 
 First we import the main libraries:
 
@@ -96,7 +96,7 @@ def get_destination(destination):
     return json_output
  ```
  
- ## Call Amadeus Low Fare API ##
+ ## Call Amadeus Low Fare API
  
 The python script will request fares to the Amadeus API for the `destination` picked by the Dialogflow agent. First, we will convert the Name of the destination to its Airport Code equivalent using `cityName_to_airport` function. 
 
@@ -172,7 +172,7 @@ def extract_fare_from_json(json):
 ```
 
 
-### cityName_to_airport ###
+### cityName_to_airport
 ```python
 def cityName_to_airport(cityName):
     """
@@ -208,7 +208,7 @@ def cityName_to_airport(cityName):
 
 
 
-### Amadeus Response example ###
+### Amadeus Response example
 ```json
 {
   "data": [
