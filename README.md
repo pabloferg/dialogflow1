@@ -34,7 +34,7 @@ $ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/<your_key_file>.jso
 
 ## Dialogflow Fulfillment code
 
-You can find the full code in [index_dialogflow.js](https://github.com/pabloferg/dialogflow1/index_dialogflow.js).
+You can find the full code in [index_dialogflow.js](index_dialogflow.js).
 
 The following code is given by Dialogflow - we will just add the 'const axios =...' to use the package:
 
