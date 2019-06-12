@@ -7,7 +7,10 @@ This example gets an intent from a user asking for a fare for a parcicular desti
 
 First we need to create an agent on Dialogflow - just follow these steps.
 
-Make sure you create an Intent with some Training phrases. In this example, we create intent `GetFlightInfo`.
+Make sure you understand the basics of tensorflow: you can start [here](https://dialogflow.com/docs/getting-started).
+
+For this example we just create and Agent (`my-mind`) and an Intent (GetFlightInfo).
+
 ![Screenshot](dialogflow_screenshot.png)
 
 
