@@ -1,0 +1,7 @@
+django
+gunicorn
+django-heroku
+flask
+pandas
+requests
+google-cloud-bigquery
