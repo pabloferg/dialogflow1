@@ -21,11 +21,11 @@ The following diagram shows the interactions between the user, agent, fulfillmen
 
 ## Dialogflow Fulfillment code
 
-There are two files:
+There are two pieces of code in the Fulfillment section in Dialogflow Console:
 - [index_dialogflow.js ](index_dialogflow.js)
-- package.json : here we will only add `"axios": "0.18.0"` to use axios package
+- [package.json](package.json) : here we will only add `"axios": "0.18.0"` to use axios package
 
-This code goes in the Fulfillment section of the Dialogflow Console. Make sure you enable webhook calls for your intent.
+Make sure you enable webhook calls for your intent.
 
 You can find the full code in [index_dialogflow.js](index_dialogflow.js).
 
@@ -127,6 +127,18 @@ In the last part, we just add the `intentMap.set` for our Intent `GetFlightInfo`
 });
 ```
 
+ ## Deploy in Heroku
+
+We deploy the app (python file) on Heroku. Find here the full folder: [first-flask-app](first-flask-app)
+
+https://medium.com/@naz_islam/how-to-authenticate-google-cloud-services-on-heroku-for-node-js-app-dda9f4eda798
+
+Once the app is deployed successfully, we need to set up GOOGLE_APPLICATION_CREDENTIALS environment variable and point it to the path of the service account key. In our case it is ‘config/<your_key_file>.json’.
+
+```
+$ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/<your_key_file>.json’
+```
+
 ## Python-Flask Application
 
 You can find the full code here: [/first-flask-app/flask_basic.py](/first-flask-app/flask_basic.py)
@@ -205,17 +217,6 @@ def get_destination(destination):
     return json_output
  ```
  
- ## Deploy in Heroku
-
-We deploy the app (python file) on Heroku. Find here the full folder: [first-flask-app](first-flask-app)
-
-https://medium.com/@naz_islam/how-to-authenticate-google-cloud-services-on-heroku-for-node-js-app-dda9f4eda798
-
-Once the app is deployed successfully, we need to set up GOOGLE_APPLICATION_CREDENTIALS environment variable and point it to the path of the service account key. In our case it is ‘config/<your_key_file>.json’.
-
-```
-$ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/<your_key_file>.json’
-```
 
 
  
@@ -223,7 +224,7 @@ $ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/<your_key_file>.jso
  
 The python script will request fares to the Amadeus API for the `destination` picked by the Dialogflow agent. First, we will convert the Name of the destination to its Airport Code equivalent using `cityName_to_airport` function. 
 
-The Amadeus API has a common POST/GET interaction, you can read more about it [here](https://developers.amadeus.com/self-service/category/air/api-doc/flight-low-fare-search/api-reference). First, using a `POST` request we get an `access_token`. Then, with a `GET` request we ask for the json file containing flights and fares. For this example, we hard-coded the GET query with origin in Heathrow Airport (`LHR`), one-way non-stop departure in `2019-07-01` for one adult with British Airways (`BA`).
+The Amadeus API has a common POST/GET interaction, you can read more about it [here](https://developers.amadeus.com/self-service/category/air/api-doc/flight-low-fare-search/api-reference). First, using a `POST` request we get an `access_token`. Then, with a `GET` request we ask for the json file containing flights and fares. For this example, we hard-coded the GET query with origin in Heathrow Airport (LHR), one-way non-stop departure in 2019-07-01 for one adult with British Airways (BA).
 
 ```json
 {"origin":"LHR",
@@ -236,10 +237,12 @@ The Amadeus API has a common POST/GET interaction, you can read more about it [h
 ```
  
  
- [Amadeus example](#amadeus-response-example)
+Here you can see an example of [Amadeus API response](#amadeus-response-example)
   
  
  ![Screenshot](diagram_amadeus_dialogflow.png)
+ 
+ 
  
  ```python
  #### AMADEUS API ####
