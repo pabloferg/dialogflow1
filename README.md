@@ -26,11 +26,8 @@ The following diagram shows the interactions between the user, agent, fulfillmen
 
 You can find the full code in [index_dialogflow.js](index_dialogflow.js).
 
-The following code is given by Dialogflow - we will just add the 'const axios =...' to use the package:
+The following code is given by Dialogflow - we will just add the `const axios =...` to use the package:
 
-```javascript
-const axios = require('axios');
-```
 
 ```javascript
 // See https://github.com/dialogflow/dialogflow-fulfillment-nodejs
@@ -204,7 +201,7 @@ def get_destination(destination):
  
  ## Deploy in Heroku
 
-We deploy the app (python file) on Heroku. Find here the full folder: 
+We deploy the app (python file) on Heroku. Find here the full folder: [first-flask-app](first-flask-app)
 
 https://medium.com/@naz_islam/how-to-authenticate-google-cloud-services-on-heroku-for-node-js-app-dda9f4eda798
 
