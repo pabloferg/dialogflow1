@@ -1,5 +1,10 @@
 # dialogflow1
-First Dialogflow Project
+
+This example gets an intent from a user asking for a fare for a parcicular destination, then the agent will reply back with a fare.
+
+First we need to create an agent on Dialogflow - just follow these steps.
+
+Once we have the 
 
 
 ![Screenshot](diagram.png)
@@ -14,9 +19,10 @@ Once the app is deployed successfully, we need to set up GOOGLE_APPLICATION_CRED
 $ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/keyFile.json’
 ```
 
-```python
-print('Hola')
-```
+
+# Python-Flask Application #
+
+First we import the main libraries:
 
 ```python
 from flask import Flask, jsonify, request
@@ -24,7 +30,10 @@ import pandas as pd
 import requests
 import time
 from google.cloud import bigquery
+```
 
+
+```python
 # Initialize a BigQuery Client
 client = bigquery.Client()
 
