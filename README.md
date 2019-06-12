@@ -140,3 +140,13 @@ def get_request_fares(access_token, airport_code):
  
  
 ```
+
+Extract fare from json file:
+
+```python
+def extract_fare_from_json(json):
+    fare = json['data'][0]['offerItems'][0]['pricePerAdult']['total']
+    airline = json['data'][0]['offerItems'][0]['services'][0]['segments'][0]['flightSegment']['carrierCode']
+
+    return fare, airline
+```
