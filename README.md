@@ -18,7 +18,7 @@ $ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/keyFile.json’
 print('Hola')
 ```
 
-```
+```python
 from flask import Flask, jsonify, request
 import pandas as pd
 import requests
