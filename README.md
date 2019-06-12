@@ -155,6 +155,42 @@ def extract_fare_from_json(json):
 ```
 
 
+### cityName_to_airport ###
+```python
+def cityName_to_airport(cityName):
+    """
+    Converts name of the city to the airport code using BigQuery lookup table
+    cityName : string
+    """
+    # create query string
+    query_string = """
+        SELECT * FROM AirportCityCodes.main
+        WHERE LOWER(cityName) = '%s'
+        """ % cityName.lower()
+
+    # query
+    query_job = client.query(query_string)
+
+    results = query_job.result()  # Wait for job to complete.
+    df = results.to_dataframe()   # Convert result to dataframe to manipulate it easier (note: check how to do it straightaway)
+
+    if df.shape[0] == 0:         # df is empty   (0 rows)
+        airportCode = ""
+        airportName = ""
+    elif df.shape[0] == 1:                     # unique result (1 rows)
+        airportCode = df['airportCode'][0]     # pick the first airport
+        airportName = df['airportName'][0]
+    else:
+        airportCode = df['airportCode'][0]     # If multiple airports, pick the first one (i.e Paris = [CDG, ORY])
+        airportName = df['airportName'][0]
+
+    return airportCode, airportName
+```
+
+
+
+
+
 Amadeus Response example:
 ```json
 {
