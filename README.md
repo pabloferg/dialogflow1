@@ -34,7 +34,11 @@ $ heroku config:set GOOGLE_APPLICATION_CREDENTIALS=‘config/<your_key_file>.jso
 
 ## Dialogflow Fulfillment code
 
-The following code is given by Dialogflow -we can keep it:
+The following code is given by Dialogflow - we will just add the following line to use `axios` package:
+
+```javascript
+const axios = require('axios');
+```
 
 ```javascript
 // See https://github.com/dialogflow/dialogflow-fulfillment-nodejs
@@ -45,7 +49,7 @@ const functions = require('firebase-functions');
 const {WebhookClient} = require('dialogflow-fulfillment');
 const {Card, Suggestion} = require('dialogflow-fulfillment');
 
-const axios = require('axios');
+const axios = require('axios'); # <====== add
 
  
 process.env.DEBUG = 'dialogflow:debug'; // enables lib debugging statements
