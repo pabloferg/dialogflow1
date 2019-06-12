@@ -113,7 +113,8 @@ The Amadeus API has a common POST/GET interaction, you can read more about it [h
 ```
  
  
- [Amadeus example ](###amadeus-response-example:)
+ [Amadeus example](#amadeus-response-example:)
+ 
  You will need `client_id` and `client_secret` from Amadues.
  
  
