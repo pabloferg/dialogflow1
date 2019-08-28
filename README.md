@@ -1,5 +1,7 @@
-Call Amadeus Low Fares API using Dialogflow
+Old version: Call Amadeus Low Fares API using Dialogflow
 =============================
+
+New version: https://github.com/pabloferg/dialogflow-flights
 
 ## Content
 
