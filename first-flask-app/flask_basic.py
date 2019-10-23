@@ -67,11 +67,11 @@ def post_request_fares():
 
     url = "https://test.api.amadeus.com/v1/security/oauth2/token"
 
-    payload = "grant_type=client_credentials&client_id=gHea0Lv9FKuZmoDAsKblP4KmU3YcLGu6&client_secret=M6cweU8QmCb7XhNR&undefined="
+    payload = "grant_type=client_credentials&client_id=gHea0Lvxxxxxxxclient_secret=M6cwxxxxxxxxxxxx&undefined="
     headers = {
         'Content-Type': "application/x-www-form-urlencoded",
         'cache-control': "no-cache",
-        'Postman-Token': "52a00ceb-c42c-46bc-a9b7-3afb5f693441"
+        'Postman-Token': "xxxxxxxxxxxx"
         }
 
     response = requests.request("POST", url, data=payload, headers=headers)
